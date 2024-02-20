@@ -17,7 +17,6 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-
 		Comparator<MarkedValue<Integer>> markedComparator = new MarkedValueComparator<>(new IntegerComparator());
 
 		ArrayList<Generator<MarkedValue<Integer>>> generators = getListOfGenerators();
@@ -32,8 +31,9 @@ public class Main {
 				for (String collection : collectionArray) {
 
 					int[] size = sizeArray2;
-					if (generators.indexOf(generator) == 1 || generators.indexOf(generator) == 2)
+					if (generators.indexOf(generator) == 1 || generators.indexOf(generator) == 2) {
 						size = sizeArray;
+					}
 
 					String generatorName = "random";
 					if (generators.indexOf(generator) % 4 == 1) generatorName = "ordered";
@@ -45,10 +45,12 @@ public class Main {
 					else if (algorithms.indexOf(algorithm) % 3 == 2) algorithmName = "QuickSortFirstPivot";
 
 					ArrayList<Result> results;
-					if (collection.indexOf(collection) == 0)
+					if (collection.indexOf(collection) == 0) {
 						results = getResultsTable(algorithm, algorithmName, generator, generatorName, size);
-					else
+					}
+					else {
 						results = getResultsLinkedList(algorithm, algorithmName, generator, generatorName, size);
+					}
 
 					File file = new File(algorithmName + "_" + generatorName + "_" + collection + ".csv");
 					BufferedWriter writer = new BufferedWriter(new FileWriter(file));

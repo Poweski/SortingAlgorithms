@@ -15,13 +15,13 @@ public class MergeSort<T> extends SortingAlgorithm<T> {
 
         LinkedList<List<T>> queue = new LinkedList<>();
 
-        while (list.size() > 0) {
+        while (!list.isEmpty()) {
             List<T> innerQueue = getNewListInTheSameType(list);
             addFirst(innerQueue, removeLastFromList(list));
             addFirst(queue, innerQueue);
         }
 
-        if (queue.size() == 0)
+        if (queue.isEmpty())
             return getNewListInTheSameType(list);
 
         List<T> firstQueue;
@@ -43,13 +43,12 @@ public class MergeSort<T> extends SortingAlgorithm<T> {
         T element2 = null;
 
         while ((!list1.isEmpty() || element1 != null) && (!list2.isEmpty() || element2 != null)) {
-
-            if (element1 == null)
+            if (element1 == null) {
                 element1 = removeLastFromList(list1);
-
-            if (element2 == null)
+            }
+            if (element2 == null) {
                 element2 = removeLastFromList(list2);
-
+            }
             if (compare(element1, element2) > 0) {
                 addFirst(newList, element1);
                 element1 = null;
@@ -60,21 +59,21 @@ public class MergeSort<T> extends SortingAlgorithm<T> {
             }
         }
 
-        if (element1 != null || list1.size() > 0) {
-
-            if (element1 != null)
+        if (element1 != null || !list1.isEmpty()) {
+            if (element1 != null) {
                 addFirst(newList, element1);
-
-            while (list1.size() > 0)
+            }
+            while (!list1.isEmpty()) {
                 addFirst(newList, removeLastFromList(list1));
+            }
         }
-        else if (element2 != null || list2.size() > 0) {
-
-            if (element2 != null)
+        else if (element2 != null || !list2.isEmpty()) {
+            if (element2 != null) {
                 addFirst(newList, element2);
-
-            while (list2.size() > 0)
+            }
+            while (!list2.isEmpty()) {
                 addFirst(newList, removeLastFromList(list2));
+            }
         }
 
         return newList;

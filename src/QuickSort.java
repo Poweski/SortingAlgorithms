@@ -18,21 +18,22 @@ public class QuickSort<T> extends SortingAlgorithm<T> {
 
         recursiveID = 0;
 
-        if (list.size() <= 1)
+        if (list.size() <= 1) {
             return list;
+        }
 
         List<T> smallerOrEqual = getNewListInTheSameType(list);
         List<T> bigger = getNewListInTheSameType(list);
         T pivot = pivotSelector.select(list);
         T element;
 
-        while (list.size() > 0) {
-
-            if (compare(element = removeFirstFromList(list), pivot) <= 0)
+        while (!list.isEmpty()) {
+            if (compare(element = removeFirstFromList(list), pivot) <= 0) {
                 addLast(smallerOrEqual, element);
-
-            else
+            }
+            else {
                 addLast(bigger, element);
+            }
         }
 
         return concatenate(sort(smallerOrEqual), pivot, sort(bigger));
@@ -42,8 +43,9 @@ public class QuickSort<T> extends SortingAlgorithm<T> {
 
         addLast(smallerOrEqual, pivot);
 
-        while (bigger.size() > 0)
+        while (!bigger.isEmpty()) {
             addLast(smallerOrEqual, removeFirstFromList(bigger));
+        }
 
         return smallerOrEqual;
     }
