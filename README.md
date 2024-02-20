@@ -1,14 +1,9 @@
 # SortingAlgorithms
-Fifth and sixth assignment for algorithms and data structures lab.
 
-Wykorzystując przygotowaną paczkę kodu zaimplementuj i przetestuj
-następujące warianty poznanych algorytmów:  
-a. Sortowanie przez wstawianie z przeszukiwaniem binarnym (ang. binary
-search),  
-b. Sortowanie przez wybór z jednoczesnym wyszukiwaniem minimum
-i maksimum,  
-c. Sortowanie koktajlowe (ang. Shaker sort) jako modyfikacja sortowania
-bąbelkowego.
+Zaimplementuj i przetestuj następujące warianty poznanych algorytmów:  
+a. Sortowanie przez wstawianie z przeszukiwaniem binarnym (ang. binary search),  
+b. Sortowanie przez wybór z jednoczesnym wyszukiwaniem minimum i maksimum,  
+c. Sortowanie koktajlowe (ang. Shaker sort) jako modyfikacja sortowania bąbelkowego.
 
 Na potrzeby zadania przygotowano paczkę kodu nazwaną SortingTester
 zawierającą zestaw klas do testowania algorytmów sortowania.
@@ -68,7 +63,7 @@ czy sortowanie jest stabilne.
 Wykorzystując paczkę kodu z listy 5 zaimplementuj i przetestuj
 następujące warianty poznanych algorytmów:
 
-a. Sortowanie przez scalanie iteracyjne z kolejką (Wykład 5 slajd 8),  
+a. Sortowanie przez scalanie iteracyjne z kolejką,  
 b. Sortowanie szybkie zoptymalizowane pod kątem list dowiązaniowych:  
 i. z wyborem pivota jako pierwszego elementu,  
 ii. z wyborem pivota jako losowego elementu,  
